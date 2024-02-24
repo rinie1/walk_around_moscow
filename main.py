@@ -3,7 +3,7 @@ from telebot import types
 import openpyxl
 import random
 
-bot = telebot.TeleBot('')
+bot = telebot.TeleBot('') #bot token
 sheet_num = 0
 id_place = ''
 
