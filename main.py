@@ -222,7 +222,7 @@ def callback_message(callback):
                     bot.send_message(message.chat.id, f'{sheet[row][0].value} - {sheet[row][1].value}.\nРайон - {sheet[row][2].value.capitalize()}')
                     count += 1
             if count == 0:
-                bot.send_message(message.chat.id, 'Вы ввели неправильное название района. Попробуйте еще раз!')
+                bot.send_message(message.chat.id, 'Вы ввели неправильное название района. Попробуйте еще раз! Если вы хотите выйти из поиска, то введите <b>/main</b>.', parse_mode='html')
             else:
                 bot.send_message(message.chat.id, 'Перед каждым местом написано число - это его <b>уникальное ID</b>.\
 Если вы хотите узнать более подробную информацию о месте, то введите его ID.', parse_mode='html')
@@ -243,7 +243,7 @@ def callback_message(callback):
 \n\nСсылка на <b>Яндекс Карты</b> - {sheet[row][3].value}', parse_mode='html')
                     count = 1
             if count == 0 and id_place != 'стоп':
-                bot.send_message(message.chat.id, 'Вы ввели неправильное ID. Попробуйте еще раз!')
+                bot.send_message(message.chat.id, 'Вы ввели неправильное ID. Попробуйте еще раз! Если вы хотите выйти из поиска, то введите <b>Стоп</b>.', parse_mode='html')
                 bot.register_next_step_handler(message, place)
             elif count == 1:
                 bot.send_message(message.chat.id, 'Если вы хотите прекратить вводить ID мест, то введите <b>Стоп</b>. \
